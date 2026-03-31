@@ -1,3 +1,5 @@
-export default function Home() {
-  return <h1>To be updated</h1>;
+import { WebsiteLayout } from "@/app/components/WebsiteLayout";
+
+export default function Page() {
+  return <WebsiteLayout />;
 }
