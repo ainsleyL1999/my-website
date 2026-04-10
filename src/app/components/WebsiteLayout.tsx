@@ -26,7 +26,7 @@ export function WebsiteLayout() {
         onSelect={setActiveSection}
       />
 
-      <div className="w-2/3 bg-gray-100 p-10 overflow-y-auto">
+      <div className="w-2/3 bg-[var(--colour-content)] p-10 overflow-y-auto">
         <ActiveSectionContent />
       </div>
     </div>

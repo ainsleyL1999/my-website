@@ -15,12 +15,12 @@ type SideBarProps = {
  */
 export function SideBar({ sections, activeSectionId, onSelect }: SideBarProps) {
   return (
-    <div className="w-1/3 bg-gray-900 text-white flex flex-col p-6 gap-4">
+    <div className="w-1/3 bg-[var(--colour-section)] text-white flex flex-col p-6 gap-4">
       {sections.map((section) => (
         <button
           key={section.id}
           onClick={() => onSelect(section)}
-          className={`text-left p-3 rounded-xl cursor-pointer transition-all duration-500 transform ${
+          className={`text-left p-3 rounded-xl border-2 border-[var(--colour-section-border)] cursor-pointer transition-all duration-500 transform ${
             // Highlight the active section, otherwise apply hover styles
             section.id === activeSectionId
               ? "bg-white text-black font-semibold"
