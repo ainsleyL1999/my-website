@@ -2,30 +2,30 @@ import type { Section } from "@/types/section";
 
 type SideBarProps = {
   sections: Section[];
-  activeSectionId: string;
   onSelect: (section: Section) => void;
 };
 
 /**
  * Sidebar navigation for switching between sections.
  *
- * @param sections - List of sections to display
- * @param activeSectionId - Currently active section ID, used to highlight the active section
- * @param onSelect - Callback when a section is selected, called when a button is clicked
+ * @param sections - List of sections with content to display.
+ * @param onSelect - Callback when a section is selected so that the content for that section can be displayed.
  */
-export function SideBar({ sections, activeSectionId, onSelect }: SideBarProps) {
+export function SideBar({ sections, onSelect }: SideBarProps) {
   return (
-    <div className="w-1/3 bg-[var(--colour-section)] text-white flex flex-col p-6 gap-4">
+    <div className="w-1/3 bg-[var(--colour-section)] text-[var(--colour-text)] flex flex-col p-6 gap-4">
       {sections.map((section) => (
         <button
           key={section.id}
           onClick={() => onSelect(section)}
-          className={`text-left p-3 rounded-xl border-2 border-[var(--colour-section-border)] cursor-pointer transition-all duration-500 transform ${
-            // Highlight the active section, otherwise apply hover styles
-            section.id === activeSectionId
-              ? "bg-white text-black font-semibold"
-              : "bg-gray-800 text-gray-200 hover:bg-gray-700 hover:scale-102"
-          }`}
+          className="
+            btn bg-[var(--colour-button)]
+            hover:bg-[var(--colour-button-hover)]
+            text-[var(--colour-text)] 
+            transition-all duration-150 ease-out 
+            hover:shadow-lg 
+            hover:scale-[1.02] active:scale-98
+          "
         >
           {section.title}
         </button>

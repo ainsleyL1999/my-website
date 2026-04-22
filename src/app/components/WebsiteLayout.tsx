@@ -5,7 +5,7 @@ import type { Section } from "@/types/section";
 import { SideBar } from "@/app/components/SideBar";
 import { AboutMe } from "@/app/components/content/AboutMe";
 
-// Store the component (content) itself so we can render it dynamically based on the active section
+// Store the component (content) so we can render it dynamically based on the active section.
 const sections: Section[] = [
   { id: "about-me", title: "About Me", content: AboutMe },
 ];
@@ -20,11 +20,7 @@ export function WebsiteLayout() {
 
   return (
     <div className="flex h-screen">
-      <SideBar
-        sections={sections}
-        activeSectionId={activeSection.id}
-        onSelect={setActiveSection}
-      />
+      <SideBar sections={sections} onSelect={setActiveSection} />
 
       <div className="w-2/3 bg-[var(--colour-content)] p-10 overflow-y-auto">
         <ActiveSectionContent />
