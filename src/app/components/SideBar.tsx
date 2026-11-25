@@ -25,6 +25,8 @@ export function SideBar({ sections, onSelect }: SideBarProps) {
             transition-all duration-150 ease-out 
             hover:shadow-lg 
             hover:scale-[1.02] active:scale-98
+            btn border-0
+            shadow-none
           "
         >
           {section.title}
